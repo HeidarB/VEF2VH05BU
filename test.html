@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Verkefni 7</title>
+</head>
+<body>
+  <header>
+    <div class="headwrapper">
+      <div class="headmenu"> 
+          <div class="logo">
+            <a href="test.html">       
+              <img src="images/ROR2.png" class="logo-img"> 
+            </a>
+          </div>
+          <div class="dropedownicon" onclick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>
+          <div class="sel-web col-5" id="poop">
+            <div>
+            <a href="https://store.steampowered.com/app/632360/Risk_of_Rain_2/">Steam Page</a>
+          </div>
+        <div>
+            <a href="#">Links</a>
+            <a href=""></a>
+          </div>
+        <div>
+            <a href="#popup1">Popup</a>
+          </div>
+          </div>
+          <div id="popup1" class="overlay">
+            <div class="popup">
+                <a class="close" href="#">×</a>
+                <div class="popup_content">
+                  <img src="/verkefni-4/images/Chob.png" class="popup_img">
+                </div>
+            </div>
+          </div>
+          <script>
+                
+    var toggleMe = document.getElementsByClassName("sel-web")[0];
+    toggleMe.toggleStatus = "on";
+    
+    function myFunction(x) {
+            x.classList.toggle("change");
+      switch(toggleMe.toggleStatus){
+        case "on":
+          toggleMe.toggleStatus="off";
+          toggleMe.style.right = "0px";
+          break;
+        case "off":
+          toggleMe.toggleStatus="on";
+          toggleMe.style.right = "-15em";
+          break;
+      }
+      window.addEventListener('resize', () => {
+      // Toggle on mobile
+      if (window.innerWidth > 768) {
+          toggleMe.style.right = "0px";
+      }
+      else if (window.innerWidth && toggleMe.toggleStatus=="on") {
+          toggleMe.style.right = "-15em";
+    
+      }
+    });
+    }
+          </script>
+    
+              </div>
+          
+      </div>   
+    </header>
+  <div class="image-container">
+    <img src="images/Comando crop.png"  alt="Image 2" class="image image-right animated-image-right ">
+    <div class="overlay-text">Best Indie Game <br> Of The 21st <br>Centurey</div>
+    <img src="images/earthworm.png"  alt="Image 1" class="image image-left animated-image">
+  </div>
+  <div class="bannerBg">
+    <table class="animated-table">
+      <tr>
+        <th>WHO</th>
+        <th>WHEN</th>
+        <th>WHERE </th>
+        <th>CHECK IN</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>12:00-15:00</td>
+        <td>Germany</td>
+        <TD><input type="submit" value="Register"></TD>
+      </tr>
+      <tr>
+        <td>Centro comercial Moctezuma</td>
+        <td>12:00-15:00</td>
+        <td>Mexico</td>
+        <TD><input type="submit" value="Register"></TD>
+      </tr>
+      <tr>
+        <td>Ernst Handel</td>
+        <td>12:00-15:00</td>
+        <td>Austria</td>
+        <TD><input type="submit" value="Register"></TD>
+      </tr>
+      <tr>
+        <td>Island Trading</td>
+        <td>12:00-15:00</td>
+        <td>UK</td>
+        <TD><input type="submit" value="Register"></TD>
+      </tr>
+      <tr>
+        <td>Laughing Bacchus Winecellars</td>
+        <td>12:00-15:00</td>
+        <td>Canada</td>
+        <TD><input type="submit" value="Register"></TD>
+      </tr>
+      <tr>
+        <td>Magazzini Alimentari Riuniti</td>
+        <td>12:00-15:00</td>
+        <td>Italy</td>
+        <TD><input type="submit" value="Register"></TD>
+      </tr>
+    </table>
+  </div>
+  <section class="col-2">
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="images/Chob.png" style="width:100%">
+    </div>  
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="images/Chojb.png" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="images/ellyse.png" style="width:100%">
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+    <div>
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div> 
+  
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+    
+      // Function to move to the next slide every 5 seconds
+      setInterval(() => {
+        plusSlides(1);
+      }, 5000); // Change the interval (5000ms = 5 seconds) as needed
+    
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      } 
+    
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }  
+    
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";  
+        dots[slideIndex - 1].className += " active";
+      }
+    </script>
+    </div>
+  </section>
+  <dl class="col-2">              <!--Description list -->
+    <dt>Nafn</dt>
+      <dd>Heiðar Benediktsson</dd>
+    <dt>Tölvupóstur</dt>
+      <dd>heidarbenediktsson05@gmail.com</dd>
+    <dt>Vefhönnun</dt>
+      <dd>VEFÞ2VHB5AU, tölvubraut Tækniskólans</dd>
+  </dl>
+</body>
+</html>
